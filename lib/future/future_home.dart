@@ -10,15 +10,15 @@ class FutureHome extends StatefulWidget {
 }
 
 class _FutureHomeState extends State<FutureHome> {
+  late Future<String> value;
   int delay = 3;
+
   Future<String> loadData() {
     return Future.delayed(
       Duration(seconds: delay),
-      () => "Loaded after $delay sec",
+      () => "Data loader after $delay sec",
     );
   }
-
-  late Future<String> value;
 
   @override
   void initState() {
@@ -29,12 +29,12 @@ class _FutureHomeState extends State<FutureHome> {
   @override
   Widget build(BuildContext context) {
     return Myscaffold(
-      appBarText: 'Future Home',
+      appBarText: 'Future Demo',
       scaffoldBody: FutureBuilder(
         future: value,
         builder: (context, snapShot) {
           if (!snapShot.hasData) return CircularProgressIndicator.adaptive();
-          return Text(snapShot.data!);
+          return Text(snapShot.data ?? '');
         },
       ),
       fabOnPressed: () {
@@ -43,7 +43,7 @@ class _FutureHomeState extends State<FutureHome> {
           MaterialPageRoute(builder: (BuildContext context) => AsyncAwait()),
         );
       },
-      fabText: "async Await",
+      fabText: 'Async/Await',
     );
   }
 }
