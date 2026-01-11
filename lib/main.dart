@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:revision_master/state_management/provider/simple/my_providers.dart';
-import 'package:flutter/foundation.dart';
-import 'app.dart';
+import 'core/app_launcher.dart';
+import 'core/storage/hive_service.dart';
 
-import 'package:provider/provider.dart';
-
-void main() {
-  runApp(
-    ChangeNotifierProvider(create: (_) => CounterProvider(), child: MyApp()),
-  );
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await HiveService.init();
+  runApp(AppLauncher());
 }

@@ -12,19 +12,29 @@ dependencies:
   flutter:
     sdk: flutter
 
+  ######## icons #######
   cupertino_icons: ^1.0.8
+  font_awesome_flutter: ^10.12.0
+
+  ######## utils #######
   cached_network_image: ^3.4.1
   url_launcher: ^6.3.2
 
   ########state management#######
   provider: ^6.1.5+1
 
+  ######## db #######
+  hive_ce: ^2.16.0
+  hive_ce_flutter: ^2.3.4
+  path_provider: ^2.1.5
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
   flutter_lints: ^6.0.0
-
+  build_runner: ^2.10.4
+  hive_ce_generator: ^1.11.0
 flutter:
 
   uses-material-design: true
