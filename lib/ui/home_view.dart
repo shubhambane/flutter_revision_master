@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../feature/todo/bloc/bloc_todo_app.dart';
 import '../feature/todo/provider/provider_todo_app.dart';
 import 'commons/myScaffold.dart';
 
@@ -13,7 +14,7 @@ class HomeView extends StatelessWidget {
       scaffoldBody: Column(
         children: [
           _tile(context, 'Provider Todo', const ProviderTodoApp()),
-          _tile(context, 'Provider Todo', const ProviderTodoApp()),
+          _tile(context, 'BloC Todo', const BlocTodoApp()),
         ],
       ),
     );
